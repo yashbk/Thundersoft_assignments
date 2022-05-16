@@ -1,8 +1,10 @@
 #include "header.h"
 
+//Pointers to contain top of both the stacks
 stack *top1 = NULL;
 stack *top2 = NULL;
 
+//push operation
 void push(stack **top, int data)
 {
     stack *newnode = (stack *)malloc(sizeof(stack));
@@ -25,6 +27,8 @@ void push(stack **top, int data)
         }
     }
 }
+
+//pop operation
 void pop(stack **top)
 {
     if (*top == NULL)
@@ -39,11 +43,13 @@ void pop(stack **top)
     }
 }
 
+//enqueue operation
 void enqueue(int data)
 {
     push(&top1, data);
 }
 
+//dequeue operation
 void dequeue()
 {
     if (top1 == NULL && top2 == NULL)
@@ -64,6 +70,7 @@ void dequeue()
     }
 }
 
+//function to display data in all nodes
 void display()
 {
     if (top1 != NULL)
