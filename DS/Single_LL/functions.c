@@ -1,5 +1,6 @@
 #include "header.h"
 
+//function to insert element from last
 void insert_last_sll(sll **head, int data)
 {
     sll *newnode = (sll *)malloc(sizeof(sll));
@@ -27,6 +28,7 @@ void insert_last_sll(sll **head, int data)
     }
 }
 
+//function to delete element from last
 void delete_last_sll(sll **head)
 {
     if (*head == NULL)
@@ -54,6 +56,7 @@ void delete_last_sll(sll **head)
     }
 }
 
+//function to delete alternate nodes
 void del_alternate_node(sll **head)
 {
     if (*head == NULL)
@@ -77,6 +80,7 @@ void del_alternate_node(sll **head)
     }
 }
 
+//function to display data of all nodes
 void display_sll(sll **head)
 {
     if (*head == NULL)
@@ -94,6 +98,7 @@ void display_sll(sll **head)
     }
 }
 
+//function to get length of Linked list
 int length_sll(sll **head)
 {
     sll *temp = *head;
@@ -106,6 +111,7 @@ int length_sll(sll **head)
     return len;
 }
 
+//function to reverse the sll by reversing data
 void reverse_data_sll(sll **head)
 {
     sll *front, *back;
@@ -129,6 +135,7 @@ void reverse_data_sll(sll **head)
     }
 }
 
+//function to reverse sll by reversing link part
 void reverse_link_sll(sll **head)
 {
     sll *next = NULL;
@@ -143,6 +150,7 @@ void reverse_link_sll(sll **head)
     *head = previous;
 }
 
+//function to delete node from front
 void delete_front_sll(sll **head)
 {
     if(*head == NULL)
@@ -157,6 +165,7 @@ void delete_front_sll(sll **head)
     }
 }
 
+//function to insert node from front
 void insert_front_sll(sll **head,int data)
 {
     sll *newnode = (sll*)malloc(sizeof(sll));

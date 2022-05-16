@@ -1,8 +1,8 @@
 //Author : Yashas B K
 //Date : 16-05-2022
-/*Description : 
-1) Create a list with 3 nodes having int data in single Linked list data : 100,200,300
-2) Reverse a SLL
+/*  Description : 
+    1) Create a list with 3 nodes having int data in single Linked list data : 100,200,300
+    2) Reverse a SLL
 */ 
 
 
@@ -41,8 +41,6 @@ int main()
     del_alternate_node(&head);
     printf("After deleting alternate nodes\n");
     display_sll(&head);
-
-
 
 }
 
