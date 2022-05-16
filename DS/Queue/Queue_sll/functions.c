@@ -4,6 +4,7 @@ extern int dequeue_count;
 extern queue *front;
 extern queue *rear;
 
+//function to enqueue node
 void enqueue(int data)
 {
 	queue *newnode = (queue*)malloc(sizeof(queue));
@@ -28,7 +29,7 @@ void enqueue(int data)
 	}
 }
 
-
+//Function to dequeue node
 void dequeue()
 {
 	dequeue_count++;
@@ -48,6 +49,7 @@ void dequeue()
 	}
 }
 
+//Function to display data of all nodes
 void display()
 {
 	if(front == NULL)
@@ -64,6 +66,8 @@ void display()
 		}
 	}
 }
+
+//Function to show node data at front
 void show(queue *temp)
 {
 	printf("Even data is %d\n",temp->data);
