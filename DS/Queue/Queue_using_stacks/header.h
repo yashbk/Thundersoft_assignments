@@ -2,12 +2,14 @@
 #include <stdlib.h>
 
 typedef struct node{
-        int data;
-        struct node *link;
-}stack1,stack2;
+    int data;
+    struct node *link;
+}stack;
 
-extern stack1 *top1;
-extern stack2 *top2;
 
+void push(stack **top,int num);
+void pop(stack **top);
 void enqueue(int data);
 void dequeue();
+void display();
+

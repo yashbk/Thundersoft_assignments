@@ -74,8 +74,84 @@ void delete_from_last(cll **head)
             prev = temp;
             temp = temp->link;
         }
-        printf("The deleted element is %d\n", temp->data);
+        printf("The deleted element is %c\n", temp->data);
         free(temp);
         prev->link = *head;
+    }
+}
+
+int no_of_nodes(cll **head)
+{
+    if(*head == NULL)
+    {
+        return 0;
+    }
+    else
+    {
+        cll *temp = *head;
+        int count=0;
+        do
+        {
+            count++;
+            temp = temp->link;
+        } while (temp != *head);
+        return count;
+    }
+}
+
+void insert_node_at_nth(cll **head,char data,int n)
+{
+    if(*head == NULL && n > 1)
+    {
+        printf("Link is empty so we can't enter node at position %d\n",n);
+    }
+    else
+    {
+        cll *newnode = (cll*)malloc(sizeof(cll));
+        int len = no_of_nodes(head);
+        if(newnode == NULL)
+        {
+            printf("Memory allocation failed\n");
+        }
+        else
+        {
+            newnode->data = data;
+            newnode->link = NULL;
+            if(*head == NULL && n==1)
+            {
+                *head = newnode;
+                newnode->link = *head;
+            }
+            else if(n>0 && n<=len+1)
+            {
+                int k=1;
+                cll *prev = *head;
+                cll *next = *head;
+                if(n==1)
+                {
+                    cll *temp = *head;
+                    do
+                    {
+                        temp = temp->link;
+                    }
+                    while(temp->link != *head);
+                    newnode->link = *head;
+                    *head = newnode;
+                    temp->link = *head;
+
+                }
+                else
+                {
+                    while(k<n-1)
+                {
+                    k++;
+                    prev = prev->link;
+                }
+                newnode->link = prev->link;
+                prev->link = newnode;
+                }
+                
+            }
+        }
     }
 }

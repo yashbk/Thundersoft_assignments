@@ -1,52 +1,83 @@
 #include "header.h"
 
-void enqueue(int data)
-{
-        stack1 *newnode1 = (stack1*)malloc(sizeof(stack1));
-        if(newnode1 == NULL)
-        {
-                printf("Memory not allocated\n");
-        }
-        else
-        {
-                newnode1->data = data;
-                newnode1->link = top1;
-                printf("Inserted element is %d\n",newnode1->data);
-                top1 = newnode1;
-        }
-}
+stack *top1 = NULL;
+stack *top2 = NULL;
 
-void dequeue()
-{ 
-    if(top1 == NULL && top2 == NULL)
+void push(stack **top, int data)
+{
+    stack *newnode = (stack *)malloc(sizeof(stack));
+    if (newnode == NULL)
     {
-        printf("There are no elements in queue\n");
+        printf("Memory not allocated\n");
     }
     else
     {
-                
-        stack1 *temp = top1;
-        while(top1 != NULL)
+        newnode->data = data;
+        newnode->link = NULL;
+        if (*top == NULL)
         {
-            stack2 *newnode2 = (stack2*)malloc(sizeof(stack2));
-            if(newnode2 == NULL)
+            *top = newnode;
+        }
+        else
+        {
+            newnode->link = *top;
+            *top = newnode;
+        }
+    }
+}
+void pop(stack **top)
+{
+    if (*top == NULL)
+    {
+        printf("Stack is empty\n");
+    }
+    else
+    {
+        stack *temp = *top;
+        *top = (*top)->link;
+        free(temp);
+    }
+}
+
+void enqueue(int data)
+{
+    push(&top1, data);
+}
+
+void dequeue()
+{
+    if (top1 == NULL && top2 == NULL)
+    {
+        printf("queue is empty\n");
+    }
+    else
+    {
+        if (top2 == NULL)
+        {
+            while (top1 != NULL)
             {
-                printf("Memory not allocated\n");
-            }
-            else
-            {
-                temp = top1;
-                top1 = temp->link;
-                newnode2->link = top2;
-                newnode2->data = temp->data;
-                top2 = newnode2;
-                free(temp);  
+                push(&top2, top1->data);
+                pop(&top1);
             }
         }
-                               
-        stack2 *temp_free = top2;
-        top2 = temp_free->link;
-        printf("dequeued element is %d\n",temp_free->data);
-        free(temp_free);
+        pop(&top2);
+    }
+}
+
+void display()
+{
+    if (top1 != NULL)
+    {
+        while (top1 != NULL)
+        {
+            push(&top2, top1->data);
+            pop(&top1);
+        }
+    }
+    stack *temp = top2;
+    while(temp != NULL)
+    {
+        printf("%d\n",temp->data);
+        temp = temp->link;
     }
 }
