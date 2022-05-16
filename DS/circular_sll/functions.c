@@ -1,5 +1,6 @@
 #include "header.h"
 
+// Function to insert node at the end
 void insert(cll **head, char data)
 {
     cll *newnode = (cll *)malloc(sizeof(cll));
@@ -30,6 +31,7 @@ void insert(cll **head, char data)
     }
 }
 
+// Function to display data of all elements
 void display(cll **head)
 {
     if (*head == NULL)
@@ -59,6 +61,7 @@ void display(cll **head)
      */
 }
 
+// function to delete node from last
 void delete_from_last(cll **head)
 {
     if (*head == NULL)
@@ -80,16 +83,17 @@ void delete_from_last(cll **head)
     }
 }
 
+// Function to find the number of nodes
 int no_of_nodes(cll **head)
 {
-    if(*head == NULL)
+    if (*head == NULL)
     {
         return 0;
     }
     else
     {
         cll *temp = *head;
-        int count=0;
+        int count = 0;
         do
         {
             count++;
@@ -99,17 +103,18 @@ int no_of_nodes(cll **head)
     }
 }
 
-void insert_node_at_nth(cll **head,char data,int n)
+// Function to add element at nth position
+void insert_node_at_nth(cll **head, char data, int n)
 {
-    if(*head == NULL && n > 1)
+    if (*head == NULL && n > 1)
     {
-        printf("Link is empty so we can't enter node at position %d\n",n);
+        printf("Link is empty so we can't enter node at position %d\n", n);
     }
     else
     {
-        cll *newnode = (cll*)malloc(sizeof(cll));
+        cll *newnode = (cll *)malloc(sizeof(cll));
         int len = no_of_nodes(head);
-        if(newnode == NULL)
+        if (newnode == NULL)
         {
             printf("Memory allocation failed\n");
         }
@@ -117,40 +122,37 @@ void insert_node_at_nth(cll **head,char data,int n)
         {
             newnode->data = data;
             newnode->link = NULL;
-            if(*head == NULL && n==1)
+            if (*head == NULL && n == 1)
             {
                 *head = newnode;
                 newnode->link = *head;
             }
-            else if(n>0 && n<=len+1)
+            else if (n > 0 && n <= len + 1)
             {
-                int k=1;
+                int k = 1;
                 cll *prev = *head;
                 cll *next = *head;
-                if(n==1)
+                if (n == 1)
                 {
                     cll *temp = *head;
                     do
                     {
                         temp = temp->link;
-                    }
-                    while(temp->link != *head);
+                    } while (temp->link != *head);
                     newnode->link = *head;
                     *head = newnode;
                     temp->link = *head;
-
                 }
                 else
                 {
-                    while(k<n-1)
-                {
-                    k++;
-                    prev = prev->link;
+                    while (k < n - 1)
+                    {
+                        k++;
+                        prev = prev->link;
+                    }
+                    newnode->link = prev->link;
+                    prev->link = newnode;
                 }
-                newnode->link = prev->link;
-                prev->link = newnode;
-                }
-                
             }
         }
     }
