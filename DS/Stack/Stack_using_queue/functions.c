@@ -1,9 +1,13 @@
 #include "header.h"
 
-void enqueue(queue **front,queue **rear,int data)
+queue *front1 = NULL, *front2 = NULL;
+queue *rear1 = NULL, *rear2 = NULL;
+queue *buffer = NULL;
+
+void enqueue(queue **front, queue **rear, int data)
 {
-    queue *newnode = (queue*)malloc(sizeof(queue));
-    if(newnode == NULL)
+    queue *newnode = (queue *)malloc(sizeof(queue));
+    if (newnode == NULL)
     {
         printf("Memory allocation failed\n");
     }
@@ -11,7 +15,7 @@ void enqueue(queue **front,queue **rear,int data)
     {
         newnode->data = data;
         newnode->link = NULL;
-        if(*front == NULL && *rear == NULL)
+        if (*front == NULL && *rear == NULL)
         {
             *front = newnode;
             *rear = newnode;
@@ -24,9 +28,9 @@ void enqueue(queue **front,queue **rear,int data)
     }
 }
 
-void dequeue(queue **front,queue **rear)
+void dequeue(queue **front, queue **rear)
 {
-    if(*front == NULL)
+    if (*front == NULL)
     {
         printf("There are no lists");
     }
@@ -35,26 +39,65 @@ void dequeue(queue **front,queue **rear)
         queue *temp = *front;
         *front = (*front)->link;
         free(temp);
+        if (*front == NULL)
+        {
+            *rear = NULL;
+        }
     }
 }
 
 void push(int data)
 {
-
+    if (front1 == NULL)
     {
-        enqueue(&front1,&rear1,data);
+        enqueue(&front1, &rear1, data);
+        while (front2 != NULL)
+        {
+            enqueue(&front1, &rear1, front2->data);
+            dequeue(&front2, &rear2);
+        }
+    }
+    else
+    {
+        enqueue(&front2, &rear2, data);
+        while (front1 != NULL)
+        {
+            enqueue(&front2, &rear2, front1->data);
+            dequeue(&front1, &rear1);
+        }
+    }
+}
+
+void pop()
+{
+    if (front1 != NULL)
+    {
+        dequeue(&front1, &rear1);
+    }
+    else
+    {
+        dequeue(&front2, &rear2);
+    }
+}
+
+void display()
+{
+    if (front1 != NULL)
+    {
+        queue *temp = front1;
+        while(temp != NULL)
+        {
+            printf("%d \n",temp->data);
+            temp = temp->link;
+        }
+    }
+    else
+    {
         queue *temp = front2;
         while(temp != NULL)
         {
-            enqueue(&front1,&rear1,temp->data);
-            dequeue(&front2,&rear2);
+            printf("%d \n",temp->data);
             temp = temp->link;
         }
-        buffer = front1;
-        front1 = front2;
-        front2 = buffer;
-        buffer = rear1;
-        rear1 = rear2;
-        rear2 = buffer;
     }
 }

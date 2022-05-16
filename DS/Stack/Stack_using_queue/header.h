@@ -6,10 +6,8 @@ typedef struct node{
     struct node *link;
 }queue;
 
-// queue *First = NULL;
-// queue *Second = NULL; 
-queue *front1 = NULL,*front2 = NULL;
-queue *rear1 = NULL,*rear2 = NULL;
-queue *buffer = NULL;
-
 void enqueue(queue **front,queue **rear,int data);
+void dequeue(queue **front,queue **rear);
+void push(int data);
+void pop();
+void display();
