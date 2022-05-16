@@ -1,13 +1,10 @@
 #include "header.h"
 
-typedef struct node{
-	int data;
-	struct node *link;
-}stack;
-
 stack *top = NULL;
 
 extern int pop_count;
+
+//function to pop node
 void pop()
 {
 	if(top == NULL)
@@ -23,6 +20,7 @@ void pop()
 	free(temp);
 }
 
+//function to push node
 void push(int data)
 {
 	stack *newnode = (stack*)malloc(sizeof(stack));
@@ -38,6 +36,7 @@ void push(int data)
 	}
 }
 
+//function to display data of all nodes
 void display()
 {
 	printf("Entered even data is %d\n",top->data);
