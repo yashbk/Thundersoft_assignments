@@ -1,9 +1,10 @@
 #include "header.h"
 
+
 queue *front1 = NULL, *front2 = NULL;
 queue *rear1 = NULL, *rear2 = NULL;
-queue *buffer = NULL;
 
+//function to enqueue node
 void enqueue(queue **front, queue **rear, int data)
 {
     queue *newnode = (queue *)malloc(sizeof(queue));
@@ -28,6 +29,7 @@ void enqueue(queue **front, queue **rear, int data)
     }
 }
 
+//function to dequeue node
 void dequeue(queue **front, queue **rear)
 {
     if (*front == NULL)
@@ -46,6 +48,7 @@ void dequeue(queue **front, queue **rear)
     }
 }
 
+//function to push data
 void push(int data)
 {
     if (front1 == NULL)
@@ -68,6 +71,7 @@ void push(int data)
     }
 }
 
+//function to pop data
 void pop()
 {
     if (front1 != NULL)
@@ -80,6 +84,7 @@ void pop()
     }
 }
 
+//function to display data of all nodes
 void display()
 {
     if (front1 != NULL)
