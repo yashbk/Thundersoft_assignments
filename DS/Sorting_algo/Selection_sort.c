@@ -1,28 +1,28 @@
-//Author : Yashas B K
-//Date : 08-05-2022
-// Selection sort
-// Best case O(n^2)
-// Worst case O(n^2)
+// Author : Yashas B K
+// Date : 08-05-2022
+//  Selection sort
+//  Best case O(n^2)
+//  Worst case O(n^2)
 
 #include <stdio.h>
 
 void Selection_sort(int row, int *arr)
 {
     int temp = 0;
-    int position = 0;
-    for (int i = 0; i < (row - 1); i++)
+    int min = 0;
+    for (int i = 0; i < row - 1; i++)
     {
-        position = i;
+        min = i;
         for (int j = i + 1; j < row; j++)
         {
-            if (arr[position] > arr[j])
-                position = j;
+            if (arr[min] > arr[j])
+                min = j;
         }
-        if (position != i)
+        if (min != i)
         {
             temp = arr[i];
-            arr[i] = arr[position];
-            arr[position] = temp;
+            arr[i] = arr[min];
+            arr[min] = temp;
         }
     }
 }
