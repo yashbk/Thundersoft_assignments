@@ -1,17 +1,18 @@
-//Author : Yashas B K
-//Date : 08-05-2022
-// Bubble sort
-// Best case O(n) 
-// Worst case O(n^2)
+// Author : Yashas B K
+// Date : 08-05-2022
+//  Bubble sort
+//  Best case O(n)
+//  Worst case O(n^2)
 
 #include <stdio.h>
 
 void bubble_sort(int row, int *arr)
 {
     int temp = 0;
-    char flag = 0;
+    char flag;
     for (int i = 0; i < row; i++)
     {
+        flag = 0;
         for (int j = 0; j < row - 1 - i; j++)
         {
             if (arr[j] > arr[j + 1])
@@ -21,19 +22,19 @@ void bubble_sort(int row, int *arr)
                 arr[j + 1] = temp;
                 flag = 1;
             }
-            if(flag == 0)
-            {
-                break;
-            }
+        }
+        if (flag == 0)
+        {
+            break;
         }
     }
 }
 
-void print_arr(int len,int *arr)
+void print_arr(int len, int *arr)
 {
-    for(int i=0;i<len;i++)
+    for (int i = 0; i < len; i++)
     {
-        printf("%d ",*(arr+i));
+        printf("%d ", *(arr + i));
     }
     putchar('\n');
 }
@@ -42,18 +43,17 @@ int main()
 {
     int len;
     printf("Enter the length of array:");
-    scanf("%d",&len);
+    scanf("%d", &len);
     int arr[len];
-    for(register int i=0;i<len;i++)
+    for (register int i = 0; i < len; i++)
     {
-        printf("Enter the element %d: ",i+1);
-        scanf("%d",&arr[i]);
+        printf("Enter the element %d: ", i + 1);
+        scanf("%d", &arr[i]);
     }
-    
-    
+
     printf("Before sorting:\n");
-    print_arr(sizeof(arr)/sizeof(int),arr);
-    bubble_sort(sizeof(arr)/sizeof(int),arr);
+    print_arr(sizeof(arr) / sizeof(int), arr);
+    bubble_sort(sizeof(arr) / sizeof(int), arr);
     printf("After sorting:\n");
-    print_arr(sizeof(arr)/sizeof(int),arr);
+    print_arr(sizeof(arr) / sizeof(int), arr);
 }

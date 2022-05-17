@@ -8,17 +8,17 @@
 
 void insertion_sort(int row, int *arr)
 {
-    int temp = 0,i,j;
-     for (i = 1 ; i <= row - 1; i++)
+    int temp = 0,j=0;
+     for (int i = 1 ; i <= row - 1; i++)
     {
+        temp = arr[i];
 	    j = i;
-            while ( j > 0 && arr[j-1] > arr[j])
+            while ( j > 0 && arr[j-1] > temp)
             {	        
-                temp     = arr[j];
-                arr[j]   = arr[j-1];
-                arr[j-1] = temp;
+                arr[j] = arr[j-1];
                 j--;
             }
+            arr[j] = temp;
     }
 }
 
