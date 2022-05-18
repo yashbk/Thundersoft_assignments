@@ -1,5 +1,5 @@
 //Author : Yashas B K
-//Date : 18-05-2022
+//Date : 04-05-2022
 //Description : Program to explain all storage classes scope.
 
 #include <stdio.h>
