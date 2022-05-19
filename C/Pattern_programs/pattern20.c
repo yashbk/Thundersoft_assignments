@@ -2,40 +2,39 @@
 // Date : 19-05-2022
 /*Description : WAP to print below pattern
 
-1
-..
-222
-....
-33333
-......
+    A
+   bb
+  CCC
+ dddd
+EEEEE
  */
 
 #include <stdio.h>
 
 int main()
 {
-    int num, limit;
+    int num;
     printf("Enter a number\n");
     scanf("%d", &num);
-    int n=1;
-    int odd = 1,even=0,once = 1;
-    for (int i = 0; i <= num; i++)
+    int n=65;
+    for (int i = 1; i <= num; i++)
     {
-        for(int j=0;j<=i;j++)
+        for(int k=i;k<num;k++)
         {
-            if(i%2 == 0)
+            printf(" ");
+        }
+        for(int j=1;j<=i;j++)
+        {
+            if(i%2 != 0)
             {
-                printf("%d",n);
+                printf("%c",n);
             }
             else
             {
-                printf(".");
+                printf("%c",n+32);
             }
         }
-        if(i%2 == 0)
-        {
-            n++;
-        }
+        n = n+1;
         printf("\n");
     }
     return 0;
