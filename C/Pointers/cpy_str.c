@@ -1,3 +1,6 @@
+//Author : Yashas B K
+//Description : Write a C program to copy one string to another string and find length of new string using pointers.
+
 #include<stdio.h>
 #include "header/header.h"
 #include <string.h>

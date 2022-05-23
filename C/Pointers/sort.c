@@ -1,5 +1,4 @@
 //Author : Yashas B K
-//Date : 06-05-2022
 //Description : Write a C program to sort an int array using pointers. [ increasing order / decreasing order ]
 
 #include<stdio.h>

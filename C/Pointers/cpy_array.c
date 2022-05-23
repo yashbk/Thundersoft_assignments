@@ -1,3 +1,5 @@
+//Author Yashas B K
+//Description : Write a C program to copy one array to another using pointers.
 #include<stdio.h>
 #include "header/header.h"
 

@@ -1,3 +1,5 @@
+//Author : Yashas B K
+//Description : Write a C program to swap two numbers using pointers.
 #include <stdio.h>
 #include "header/header.h"
 

@@ -1,3 +1,5 @@
+//Author Yashas B K
+//Description : Write a C program to add 2D array using pointers.
 #include <stdio.h>
 #include "header/header.h"
 #define ROW 2
