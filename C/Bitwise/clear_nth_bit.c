@@ -1,4 +1,5 @@
-//Program to clear nth bit of a number
+//Author : Yashas B K
+//Description : Program to clear nth bit of a number
 
 #include <stdio.h>
 #include "header/header.h"

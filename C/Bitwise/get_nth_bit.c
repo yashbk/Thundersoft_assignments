@@ -1,3 +1,4 @@
+//Author : Yashas B K
 //Program to get nth bit of a number
 
 #include <stdio.h>

@@ -1,3 +1,4 @@
+//Author : Yashas B K
 //Program to toggle nth bit of a number
 
 #include <stdio.h>

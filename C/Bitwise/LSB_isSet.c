@@ -1,3 +1,4 @@
+//Author : Yashas B K
 //Program to check whether  is set or not
 
 #include <stdio.h>

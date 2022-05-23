@@ -1,3 +1,4 @@
+//Author : Yashas B K
 //Program to check whether MSB is set or not
 
 #include <stdio.h>
