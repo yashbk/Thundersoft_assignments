@@ -1,6 +1,6 @@
-//Author : Yashas B K
-//Date : 27-05-2022
-//Description : WAP to print factorial of a number using recursion
+// Author : Yashas B K
+// Date : 27-05-2022
+// Description : WAP to print factorial of a number using recursion
 #include <stdio.h>
 
 int factorial(int n)
@@ -20,12 +20,12 @@ int main()
     {
         printf("Enter a number to get it's factorial: ");
         scanf("%d", &num);
-        if(num < 0)
+        if (num < 0)
         {
             printf("Please enter positive number:\n");
         }
         else
-        break;
+            break;
     }
-    printf("Factorial of %d is %d",num,factorial(num));
+    printf("Factorial of %d is %d", num, factorial(num));
 }
