@@ -9,11 +9,16 @@
 int main()
 {
     stru *ptr = (stru *)malloc(sizeof(stru) * SIZE);
-    (*ptr).ch = 'h';
-    (ptr + 1)->ch = 'e';
-    (ptr + 2)->ch = 'l';
-    (ptr + 3)->ch = 'l';
-    (ptr + 4)->ch = 'o';
+    char arr[] = {'h','e','l','l','o'};
+    for(int i=0;i<SIZE;i++)
+    {
+        (ptr+i)->ch = arr[i];
+    }
+//    (*ptr).ch = 'h';
+//     (ptr + 1)->ch = 'e';
+//     (ptr + 2)->ch = 'l';
+//     (ptr + 3)->ch = 'l';
+//     (ptr + 4)->ch = 'o';
     printf("Before sorting\n");
     print_str(ptr);
     sort(ptr, SIZE);
