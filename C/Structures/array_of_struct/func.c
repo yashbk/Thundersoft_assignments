@@ -16,7 +16,7 @@ void sort(stru *ptr, int len)
     {
         for (int j = 0; j < len - 1; j++)
         {
-            if (ptr[j].ch > ptr[j + 1].ch)
+            if ((ptr+j)->ch > ptr[j + 1].ch)
             {
                 temp = ptr[j].ch;
                 ptr[j].ch = ptr[j + 1].ch;
