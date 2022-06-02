@@ -4,10 +4,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-typedef struct{
+typedef struct
+{
     char ch;
-}stru;
-
+} stru;
 
 void print_str(stru *ptr);
+
+void sort(stru *ptr, int len);
 #endif
