@@ -31,7 +31,7 @@ int len(char *str)
 int main()
 {
     char str[20];
-    printf("Enter a string to check whether it is palindrome or not: ");
+    printf("Enter a string to reverse it: ");
     scanf("%20s", str);
     printf("String before reversing is %s\n", str);
     reverse(str, len(str));
