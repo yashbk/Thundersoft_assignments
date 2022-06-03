@@ -36,14 +36,17 @@ int main(int argv, char **argc)
                 flag = 1;
                 break;
             }
-            if(ch1 || ch2) //true
+            if(ch1 == EOF)
             {
-                if(ch1 != ch2) //
+                if(ch2 == EOF)
                 {
-                    flag =1;
                     break;
                 }
-                break;
+                else
+                {
+                    flag = 1;
+                    break;
+                }
             }
         }
         if (flag == 0)
