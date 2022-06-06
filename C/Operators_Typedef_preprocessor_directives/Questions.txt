@@ -154,7 +154,7 @@ int main()
 int main()
 {
 	char DATE[15] = "Current Date"; 
-	printf("%s\n", __DATE__ ); 
+	printf("%s\n", __DATE__ ); __TIME_ is a macro which returns current date "May 10 2022" 
 	return 0;
 }
 
@@ -163,7 +163,7 @@ int main()
 int main()
 {
 	char TIME[15] = "Current Time";
-	printf("%s\n",__TIME__); // __TIME_ is a macro which returns string "May 5 2022"
+	printf("%s\n",__TIME__); // __TIME_ is a macro which returns string "10:12:22"
 	return 0;
 }
 
@@ -171,7 +171,7 @@ int main()
 #include<stdio.h>
 int main()
 {	
-	printf("Line :%d\n", __LINE__ ); //__LINE__ is a macro which prints the line of printf
+	printf("Line :%d\n", __LINE__ ); //__LINE__ is a macro which prints the line number of printf
 	return 0;
 }
 
@@ -180,7 +180,7 @@ int main()
 #define  preprocessor_works(x, y)  \
 	printf(#x " and " #y " are great!\n")
 int main(void) {
-	preprocessor_works(you, me); //prints you and me are great!
+	preprocessor_works(you, me); //you and me are great!
 	return 0;
 }
 
@@ -241,7 +241,7 @@ int main()
 main()
 {
 	int i=5;
-	printf ("sizeof (i) =%d", sizeof (i)); // prints 1
+	printf ("sizeof (i) =%d", sizeof (i)); // sizeof (i) =1
 }
 
 18) Write programs to understand the usage of below preprocessor directives.
@@ -273,7 +273,7 @@ int main()
 typedef int (*apfArithmatics[3])(int,int);  //array of three function pointers of return type int
 
 5) What is pf in the below statement?
-typedef int (*pf)(int); //function pointer 
+typedef int (*pf)(int); //pf is an alias for a function pointer with one parameter
 
 6) What do the following declarations mean?
 typedef char *pc; //pc is an alias for a pointer to a character
