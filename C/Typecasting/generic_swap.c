@@ -8,7 +8,7 @@
 
 void generic_swap(void *num1, void *num2, int size)
 {
-    void *temp = malloc(sizeof(16));
+    void *temp = malloc(sizeof(size));
     memcpy(temp, num1, size);
     memcpy(num1, num2, size);
     memcpy(num2, temp, size);
@@ -26,6 +26,7 @@ int main()
     printf("After  swapping integer num1 = %d num2 = %d\n", num1, num2);
 
     //Swapping floating point data type
+    printf("Swapping floating point data type:\n");
     printf("Before swapping float real1 = %f real2 = %f\n", real1, real2);
     generic_swap(&real1,&real2,sizeof(float));
     printf("After  swapping float real1 = %f real2 = %f\n", real1, real2);
