@@ -230,7 +230,7 @@ int main()
 #define clrscr() 50
 int main()
 {
-	clrscr(); /// 50; is a valid statement;
+	clrscr(); // 50; is a valid statement;
 	printf("%d\n",clrscr()); //prints 50
 	return 0;
 }
