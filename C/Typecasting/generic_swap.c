@@ -8,7 +8,7 @@
 
 void generic_swap(void *num1, void *num2, int size)
 {
-    void *temp = malloc(sizeof(size));
+    void *temp = malloc(size);
     memcpy(temp, num1, size);
     memcpy(num1, num2, size);
     memcpy(num2, temp, size);
