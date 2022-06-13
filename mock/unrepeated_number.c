@@ -6,12 +6,12 @@ Description : Given an array in which each element has one duplicate exc ept one
 
 Sample input and output:
 Scenario 1:
-Input = {1,2,3,7,3,2,1}
+Input = {1,10,6,7,10,1,6}
 Output = 7;
 
 Scenario 2:
-Input :{1,2,2,2,4,2,1}
-Output: 4
+Input :{3,8,2,8,3,9,2}
+Output: 9
 */
 
 #include <stdio.h>
