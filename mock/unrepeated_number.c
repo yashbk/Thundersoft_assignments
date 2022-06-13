@@ -1,7 +1,10 @@
-//Given an array of numbers which are repeated twice. In that one number is not repeated.
-// Write a program to get that unrepeated number at a complexity of O(n).
 /*
-Sample input and output: 
+Author : Yashas B K
+Date : 13-06-2022
+Description : Given an array in which each element has one duplicate exc ept one element. 
+              WAP to find the odd one at O(n) time complexity algorithm.
+
+Sample input and output:
 Scenario 1:
 Input = {1,2,3,7,3,2,1}
 Output = 7;
@@ -11,18 +14,23 @@ Input :{1,2,2,2,4,2,1}
 Output: 4
 */
 
-
 #include <stdio.h>
 
 int main()
 {
-
-    int arr[] = {1,2,2,2,4,2,1}; 
-    int len = sizeof(arr)/sizeof(int);
-    int out=arr[0];
-    for(int i=1;i<len;i++)
+    int len = 0;
+    printf("Enter the length of the array: ");
+    scanf("%d", &len);
+    int arr[len];
+    printf("Enter %d elements: ", len);
+    for (int i = 0; i < len; i++)
     {
-        out = out ^ arr[i];
+        scanf("%d",arr+i);
     }
-    printf("The unrepeated number in the array is %d",out);
+    int odd_one = arr[0];
+    for (int i = 1; i < len; i++)
+    {
+        odd_one = odd_one ^ arr[i];
+    }
+    printf("The unrepeated number in the array is %d", odd_one);
 }
