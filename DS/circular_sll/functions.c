@@ -103,6 +103,31 @@ int no_of_nodes(cll **head)
     }
 }
 
+// Circular ll or not
+void circular_or_not(cll **head)
+{
+    int flag = 0;
+    cll *temp = *head;
+    do
+    {
+        if (temp == NULL)
+        {
+            flag = 1;
+            break;
+        }
+        temp = temp->link;
+    } while (temp != *head);
+
+    if (flag == 1)
+    {
+        printf("This is not a circular linked list\n\n");
+    }
+    else
+    {
+        printf("This is a circular linked list\n\n");
+    }
+}
+
 // Function to add element at nth position
 void insert_node_at_nth(cll **head, char data, int n)
 {

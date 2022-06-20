@@ -37,6 +37,8 @@ int main()
     display(&head);
     printf("Number of nodes in CLL is %d\n\n", no_of_nodes(&head));
 
+    circular_or_not(&head);
+
     printf("Inserting node at position 7\n");
     insert_node_at_nth(&head, 'Y', 7);
     display(&head);
